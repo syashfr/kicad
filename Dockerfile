@@ -2,7 +2,7 @@ FROM python:3.9.0-slim-buster
 
 RUN apt-get update && apt install  -y \
 	software-properties-common \
-	wget \
+	wget \ 
     gnupg2 
    
 RUN wget -q https://xpra.org/gpg.asc -O- | apt-key add - && \
@@ -20,7 +20,8 @@ RUN apt-get update && apt install  -y \
     xpra-html5
 
 RUN apt-get update && add-apt-repository -y ppa:kicad/kicad-5.1-releases && \
-    apt-get install -y --no-install-recommends kicad 
+    apt-get install -y --no-install-recommends kicad \ 
+    && rm -rf /var/lib/apt/lists/* 
     
 ENV DISPLAY=:0
 EXPOSE 8051
