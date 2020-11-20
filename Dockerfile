@@ -3,10 +3,10 @@ FROM python:3.9.0-slim-buster
 RUN apt-get update && apt install  -y \
 	software-properties-common \
 	wget \ 
-    gnupg2 
+    	gnupg2 
    
 RUN wget -q https://xpra.org/gpg.asc -O- | apt-key add - && \
-	add-apt-repository "deb https://xpra.org/ buster main" && \
+    add-apt-repository "deb https://xpra.org/ buster main" && \
     apt-get update && apt-get install -y  --no-install-recommends xpra xvfb xterm  
 
 RUN apt-get update && apt install  -y \
