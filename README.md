@@ -1,7 +1,7 @@
 # dockerised kicad
 
 KiCad is an open source software suite for Electronic Design Automation (EDA). 
-You can build and run a dockersied version kicad which is accesible from your browser.
+You can build and run a dockersied version of kicad and access it from your browser.
 
 ##### Usage 
     docker build -t syashfr/kicad:1.0.0  .
