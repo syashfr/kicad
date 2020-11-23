@@ -3,12 +3,14 @@ FROM python:3.9.0-slim-buster
 RUN apt-get update && apt install  -y \
 	software-properties-common \
 	wget \ 
-    	gnupg2 
-   
+    gnupg2 
+
+#install xpra      
 RUN wget -q https://xpra.org/gpg.asc -O- | apt-key add - && \
     add-apt-repository "deb https://xpra.org/ buster main" && \
     apt-get update && apt-get install -y  --no-install-recommends xpra xvfb xterm  
 
+##install dependencies
 RUN apt-get update && apt install  -y \
     libx11-dev libxcomposite-dev libxdamage-dev \
     libxkbfile-dev \
@@ -19,6 +21,7 @@ RUN apt-get update && apt install  -y \
     python3-requests \
     xpra-html5
 
+#install kicad
 RUN apt-get update && add-apt-repository -y ppa:kicad/kicad-5.1-releases && \
     apt-get install -y --no-install-recommends kicad \ 
     && rm -rf /var/lib/apt/lists/* 
