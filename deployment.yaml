@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kicad-deployment
+  labels:
+    app: kicad
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: kicad
+  template:
+    metadata:
+      labels:
+        app: kicad
+    spec:
+      containers:
+      - name: kicad
+        image: syashfr/kicad:1.0.0
+        ports:
+        - containerPort: 8051
