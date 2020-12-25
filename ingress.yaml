@@ -1,14 +1,14 @@
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
   name: kicad-ingress
   annotations:
-    ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
   - http:
       paths:
         - path: /kicad
           backend:
-            serviceName: kicad-service
-            servicePort: 8080
+            serviceName: kicad-service 
+            servicePort: 80

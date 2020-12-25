@@ -1,13 +1,13 @@
-kind: Service 
 apiVersion: v1 
+kind: Service 
 metadata:
   name: kicad-service 
 spec: 
-  type: NodePort
+  type: LoadBalancer
   selector:
     app: kicad
   ports:
-    - nodePort: 31000
-      port: 8080
+    - port: 80
       targetPort: 8051
 
+#kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v0.41.2/deploy/static/provider/cloud/deploy.yaml
