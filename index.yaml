@@ -1,3 +1,14 @@
 apiVersion: v1
-entries: {}
-generated: "2021-02-04T11:45:03.1995225+01:00"
+entries:
+  kicad:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2021-02-04T19:49:08.5323922+01:00"
+    description: A Helm chart for Kubernetes
+    digest: df60cb08fd74559dcf8b607a23fabd15a4871f52238ea9c174297ecf54307c38
+    name: kicad
+    type: application
+    urls:
+    - https://syashfr.github.io/kicad/kicad-0.1.0.tgz
+    version: 0.1.0
+generated: "2021-02-04T19:49:08.4755401+01:00"
